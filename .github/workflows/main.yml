@@ -1,4 +1,4 @@
-name: Build the game
+name: Build Windows Version
 
 on:
   push:
@@ -6,48 +6,39 @@ on:
   workflow_dispatch:
 
 jobs:
-  BuildDesktopCache:
-    name: Build Caches
+  BuildWindows:
+    name: Build Windows
     permissions: write-all
-    uses: ./.github/workflows/dependencies.yml
-    with:
-      os: ubuntu-24.04
-      setupScript: sh ./setup/unix.sh
-      # Neuer Cache-Name gegen den alten Ballast
-      CACHE_NAME: Project-Juto-V1
-      
-  BuildDesktop:
-    name: Build Desktop
-    needs: BuildDesktopCache
-    permissions: write-all
-    strategy:
-      fail-fast: false # Verhindert, dass Windows stoppt, wenn Linux crasht
-      matrix:
-        include:
-          - name: Windows
-            os: windows-2022
-            buildArgs: "windows -final"
-            exportPath: windows
-            artifactName: Project-Juto.windows
-            cacheLibrariesPath: Juto-Desktop-V5
-            cachePath: Juto-Build-Windows-V5
-            artifactPath: export\release\windows\bin\*
-          - name: Linux
-            os: ubuntu-22.04
-            buildArgs: "linux -final"
-            exportPath: linux
-            artifactName: Project-Juto.linux
-            cachePath: Juto-Build-Linux-V5
-            cacheLibrariesPath: Juto-Desktop-V5
-            artifactPath: export/release/linux/bin/*
+    runs-on: windows-2022 # Nutzt einen echten Windows-Server
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    uses: ./.github/workflows/build.yml
-    with:
-      name: ${{ matrix.name }}
-      os: ${{ matrix.os }}
-      buildArgs: ${{ matrix.buildArgs }}
-      cacheLibrariesPath: ${{ matrix.cacheLibrariesPath }}
-      exportPath: ${{ matrix.exportPath }}
-      artifactName: ${{ matrix.artifactName }}
-      artifactPath: ${{ matrix.artifactPath }}
-      cachePath: ${{ matrix.cachePath }}
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@v1
+        with:
+          haxe-version: 4.3.6
+
+      - name: Restore Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            .haxelib
+            export/release/windows/obj
+          # Neuer Cache-Name gegen alte Fehler
+          key: Juto-Windows-Final-V1-${{ hashFiles('setup/*.sh', 'setup/*.bat') }}
+
+      - name: Install Libraries
+        # Wir nutzen Bash auf Windows, damit deine unix.sh funktioniert!
+        shell: bash
+        run: sh ./setup/unix.sh
+
+      - name: Build Game
+        run: haxelib run lime build windows -final
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Project-Juto-Windows
+          path: export/release/windows/bin/*
