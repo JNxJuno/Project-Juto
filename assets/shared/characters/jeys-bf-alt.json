@@ -1,0 +1,133 @@
+{
+  "animations": [
+    {
+      "offsets": [
+        -25,
+        22
+      ],
+      "loop": false,
+      "fps": 24,
+      "anim": "singRIGHTmiss",
+      "indices": [],
+      "name": "BF NOTE RIGHTMiss0"
+    },
+    {
+      "offsets": [
+        -35,
+        22
+      ],
+      "loop": false,
+      "fps": 24,
+      "anim": "singLEFTmiss",
+      "indices": [],
+      "name": "BF NOTE LEFTMiss0"
+    },
+    {
+      "offsets": [
+        -26,
+        23
+      ],
+      "loop": false,
+      "fps": 24,
+      "anim": "singDOWNmiss",
+      "indices": [],
+      "name": "BF NOTE DOWNMiss0"
+    },
+    {
+      "offsets": [
+        -32,
+        24
+      ],
+      "loop": false,
+      "fps": 24,
+      "anim": "singUPmiss",
+      "indices": [],
+      "name": "BF NOTE UPMiss0"
+    },
+    {
+      "offsets": [
+        61,
+        99
+      ],
+      "loop": false,
+      "fps": 24,
+      "anim": "singLEFT",
+      "indices": [],
+      "name": "BF NOTE LEFT ALT0"
+    },
+    {
+      "loop": false,
+      "offsets": [
+        46,
+        93
+      ],
+      "anim": "singDOWN",
+      "fps": 24,
+      "name": "BF NOTE DOWN ALT0",
+      "indices": []
+    },
+    {
+      "loop": false,
+      "offsets": [
+        35,
+        95
+      ],
+      "anim": "singUP",
+      "fps": 24,
+      "name": "BF NOTE UP ALT0",
+      "indices": []
+    },
+    {
+      "offsets": [
+        59,
+        99
+      ],
+      "loop": false,
+      "fps": 24,
+      "anim": "singRIGHT",
+      "indices": [],
+      "name": "BF NOTE RIGHT ALT0"
+    },
+    {
+      "loop": false,
+      "offsets": [
+        -32,
+        23
+      ],
+      "anim": "hey",
+      "fps": 24,
+      "name": "BF HEY!!0",
+      "indices": []
+    },
+    {
+      "offsets": [
+        -56,
+        129
+      ],
+      "indices": [],
+      "fps": 24,
+      "anim": "idle",
+      "loop": false,
+      "name": "BF COOL idle dance ALT0"
+    }
+  ],
+  "no_antialiasing": false,
+  "image": "characters/Jey's_BF_Assets",
+  "position": [
+    -120,
+    110
+  ],
+  "healthicon": "bf",
+  "flip_x": true,
+  "healthbar_colors": [
+    10,
+    109,
+    202
+  ],
+  "camera_position": [
+    300,
+    -135
+  ],
+  "sing_duration": 9.1,
+  "scale": 1
+}

@@ -1,0 +1,72 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-4,
+				152
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "BF COOL idle dance0"
+		},
+		{
+			"offsets": [
+				-55,
+				128
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle-alt",
+			"indices": [],
+			"name": "BF COOL idle dance ALT0"
+		},
+		{
+			"offsets": [
+				60,
+				98
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "vic",
+			"loop": false,
+			"name": "BF VICTORY!!0"
+		},
+		{
+			"offsets": [
+				60,
+				98
+			],
+			"indices": [
+				10,
+				11,
+				12,
+				13
+			],
+			"fps": 24,
+			"anim": "vic-loop",
+			"loop": true,
+			"name": "BF VICTORY!!0"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Jey's_BF_Victory",
+	"position": [
+		-120,
+		110
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		10,
+		109,
+		202
+	],
+	"camera_position": [
+		300,
+		-135
+	],
+	"sing_duration": 9.1,
+	"scale": 1
+}

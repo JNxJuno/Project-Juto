@@ -1,0 +1,14 @@
+{
+  "name": "hx3compat",
+  "url": "https://github.com/HaxeFoundation/hx3compat",
+  "license": "MIT",
+  "tags": ["cross"],
+  "description": "Some haxe 3 types for easier migration to haxe 4.",
+  "version": "1.1.0",
+  "releasenote": "compatibility fixes",
+  "contributors": ["Simn", "markknol", "Gama11", "HaxeFoundation"],
+  "dependencies": {
+
+  },
+  "classPath": "std"
+}

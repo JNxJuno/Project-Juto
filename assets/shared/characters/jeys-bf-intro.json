@@ -1,0 +1,56 @@
+{
+  "animations": [
+    {
+      "offsets": [
+        280,
+        97
+      ],
+      "indices": [],
+      "fps": 24,
+      "anim": "idle",
+      "loop": false,
+      "name": "BF Idle Chill0"
+    },
+    {
+      "offsets": [
+        281,
+        97
+      ],
+      "indices": [],
+      "fps": 24,
+      "anim": "intro",
+      "loop": false,
+      "name": "BF Cool Intro0"
+    },
+    {
+      "offsets": [
+        -4,
+        152
+      ],
+      "indices": [],
+      "fps": 24,
+      "anim": "idle-alt",
+      "loop": false,
+      "name": "BF COOL idle dance"
+    }
+  ],
+  "no_antialiasing": false,
+  "image": "characters/Jey's_BF_Assets",
+  "position": [
+    -120,
+    110
+  ],
+  "healthicon": "bf",
+  "flip_x": true,
+  "healthbar_colors": [
+    10,
+    109,
+    202
+  ],
+  "camera_position": [
+    300,
+    -135
+  ],
+  "sing_duration": 9.1,
+  "scale": 1
+}
