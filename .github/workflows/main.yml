@@ -14,7 +14,7 @@ jobs:
       os: ubuntu-24.04
       setupScript: sh ./setup/unix.sh
       # Neuer Cache-Name gegen den alten Ballast
-      CACHE_NAME: Juto-Final-Force-V7
+      CACHE_NAME: Juto-Final-Force-V10
       
   BuildDesktop:
     name: Build Desktop
