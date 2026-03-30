@@ -56,6 +56,7 @@ jobs:
             cachePath: P-Slice.1.0.build-linux
             cacheLibrariesPath: P-Slice.1.0.desktop-cache
             artifactPath: export/release/linux/bin/*
+            fail-fast: false
 
     uses: ./.github/workflows/build.yml
     with:
