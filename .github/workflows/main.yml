@@ -35,7 +35,7 @@ jobs:
         run: sh ./setup/unix.sh
 
       - name: Rebuild Lime Tools
-        run: haxelib run lime rebuild windows --quiet
+        run: haxelib run lime rebuild windows -nohl --quiet
 
       - name: Build Game
         run: haxelib run lime build windows -final
