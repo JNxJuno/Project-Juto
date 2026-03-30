@@ -53,10 +53,12 @@ class CreditsState extends MusicBeatState
 		for (mod in Mods.parseList().enabled) pushModCreditsToList(mod);
 		#end
 
-		var defaultList:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-			
-			['Juto Side Mod Contributors'],
-			['JutoJN', 'juto', 'Quote of the day: If it aint broke, dont fix it', 'https://youtube.com', '7fd2db'],
+		var defaultList:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color],
+		
+			['Project Juto Team'],
+			['JutoJN', 'juto', 'Creater/Coder - Quote of the day: If it aint broke, dont fix it', 'https://youtube.com', '7fd2db'],
+			['jSTBrY', 'jSTBrY', 'Artist - i wnt pizza hut for 2.50', 'https://www.youtube.com/@justbry11', 'FFFFFF'],
+			['GrapeJuice', 'GrapeJuice', 'Charter - “drink pool water”', 'https://x.com/grapejuice6495?s=21', '084808'],
 			[""],
 			['P-Slice Engine Team'],
 			['Mikolka9144',			'mikolka',			'The lead for the mod',								 'https://gamebanana.com/members/3329541',									'2ebcfa'],

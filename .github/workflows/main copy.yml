@@ -1,0 +1,53 @@
+name: Build the game
+
+on:
+  push:
+    branches: [master-dev]
+  workflow_dispatch:
+
+jobs:
+  BuildDesktopCache:
+    name: Build Caches
+    permissions: write-all
+    uses: ./.github/workflows/dependencies.yml
+    with:
+      os: ubuntu-24.04
+      setupScript: sh ./setup/unix.sh
+      # Neuer Cache-Name gegen den alten Ballast
+      CACHE_NAME: Project-Juto-V1
+      
+  BuildDesktop:
+    name: Build Desktop
+    needs: BuildDesktopCache
+    permissions: write-all
+    strategy:
+      fail-fast: false # Verhindert, dass Windows stoppt, wenn Linux crasht
+      matrix:
+        include:
+          - name: Windows
+            os: windows-2022
+            buildArgs: "windows -final"
+            exportPath: windows
+            artifactName: Project-Juto.windows
+            cacheLibrariesPath: Juto-Desktop-V5
+            cachePath: Juto-Build-Windows-V5
+            artifactPath: export\release\windows\bin\*
+          - name: Linux
+            os: ubuntu-22.04
+            buildArgs: "linux -final"
+            exportPath: linux
+            artifactName: Project-Juto.linux
+            cachePath: Juto-Build-Linux-V5
+            cacheLibrariesPath: Juto-Desktop-V5
+            artifactPath: export/release/linux/bin/*
+
+    uses: ./.github/workflows/build.yml
+    with:
+      name: ${{ matrix.name }}
+      os: ${{ matrix.os }}
+      buildArgs: ${{ matrix.buildArgs }}
+      cacheLibrariesPath: ${{ matrix.cacheLibrariesPath }}
+      exportPath: ${{ matrix.exportPath }}
+      artifactName: ${{ matrix.artifactName }}
+      artifactPath: ${{ matrix.artifactPath }}
+      cachePath: ${{ matrix.cachePath }}
