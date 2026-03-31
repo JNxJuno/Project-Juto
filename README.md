@@ -51,4 +51,4 @@ Base Source: Funkin' Crew (V-Slice) & Shadow Mario (Psych Engine).
 
 Development: Project Juto Team.
 
-Note: Project Juto is currently in active development. Features and structure are subject to change as the engine evolves.
+**Note: Project Juto is currently in active development. Features and structure are subject to change as the engine evolves.**
