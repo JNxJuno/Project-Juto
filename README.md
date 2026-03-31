@@ -1,4 +1,5 @@
-*Project Juto*
+## Project Juto
+
 A high-performance, cross-platform engine built on the P-Slice framework—a powerful combination of V-Slice and Psych Engine features. Optimized for UI fluidity, stability, and automated deployment.
 
 **🛠 Key Features**
